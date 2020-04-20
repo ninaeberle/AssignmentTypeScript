@@ -16,18 +16,24 @@ p {
 }
 
 #first {
-	margin-top: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	color: rgb(118, 158, 145);
+	text-align: center;
 }
 
 #second {
 	color: rgb(75, 100, 92);
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
 
 }
 
 #third {
-	color: rgb(40, 58, 52);
+	color: rgb(47, 141, 110);
 	margin-bottom: 30px;
+	text-align: center;
 }
 
 
@@ -35,8 +41,8 @@ p {
 	border: none;
 	padding: 5px 15px;
 	border-radius: 5px;
-	color: #04A1BF;
-	background-color: #025F70;
+	color: #fff;
+	background-color: #99CCBB;
 	transition: all 0.75s ease;
 	-webkit-transition: all 0.75s ease;
 	-moz-transition: all 0.75s ease;
@@ -46,8 +52,8 @@ p {
 }
 
 #enter:hover{
-	background-color: rgb(50, 81, 87);
-	color: rgb(236, 211, 156);
+	background-color: rgb(96, 143, 129);
+	color: #fff;
 }
 
 ul {
@@ -58,14 +64,15 @@ ul {
 
 li {
 	list-style: none;
+	width: 350px;
 	padding: 10px 20px;
 	color: #dd7070;
 	text-transform: capitalize;
 	font-weight: 600;
-	border: 2px solid #025f70;
+	border: 2px solid #e7a6a6;
 	border-radius: 5px;
 	margin-bottom: 10px;
-	background: #4EB9CD;
+	background: #f0c9c9;
 	transition: all 0.75s ease;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
@@ -74,7 +81,7 @@ li {
 }
 
 li:hover {
-	background: #76CFE0;
+	background: #fae6e6;
 }
 
 li > button {
@@ -85,17 +92,25 @@ li > button {
 	color: #025f70;
 	font-weight: 800;
 }
+ 
 
 input {
 	border-radius: 5px;
 	min-width: 65%;
+	width: 359px;
+	background-color: rgb(206, 206, 206);
 	padding: 5px;
 	border: none;
+	outline: 0 none;
+
 }
 
+input:hover{
+	background: rgb(184, 183, 183);
+}
 
 .done {
-	background: #51DF70 !important;
+	background: rgb(173, 245, 188) !important;
 	color: #00891E;
 }
 
@@ -123,7 +138,7 @@ body {
 }
 
 body {
-	background: #ffffff;
+	background: #e7a6a6;
 	font-size: 14px;
 }
 
@@ -141,6 +156,8 @@ body {
 .button-style {
     margin-bottom: 40px;
 }
+
+button:focus {outline:0;}
 
 
 

@@ -1,7 +1,8 @@
 const enterButton = document.getElementById("enter");
-const input = document.getElementById("userInput");
+const input = document.querySelector<HTMLInputElement>("#userInput")
 const ul = document.querySelector("ul");
 const item = document.getElementsByTagName("li");
+const editButton = document.createElement("button");//edit button
 
 function inputLength(){
 	return input!.value.length;
@@ -40,7 +41,11 @@ function createListElement() {
 	function deleteListItem(){
 		li.classList.add("delete")
 	}
-	//END ADD CLASS DELETE
+    //END ADD CLASS DELETE
+    
+    // function editListItem(){
+    //     li.classList.
+    // }
 }
 
 
