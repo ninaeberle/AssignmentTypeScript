@@ -2,7 +2,8 @@ const enterButton = document.getElementById("enter");
 const input = document.querySelector<HTMLInputElement>("#userInput")
 const ul = document.querySelector("ul");
 const item = document.getElementsByTagName("li");
-const editButton = document.createElement("button");//edit button
+const allow = document.querySelector(".button1");
+const deny = document.querySelector(".button2");
 
 function inputLength(){
 	return input!.value.length;
@@ -33,20 +34,15 @@ function createListElement() {
 	const dBtn = document.createElement("button");
 	dBtn.appendChild(document.createTextNode("X"));
 	li.appendChild(dBtn);
-	dBtn.addEventListener("click", deleteListItem);
-	// END ADD DELETE BUTTON
+    dBtn.addEventListener("click", deleteListItem);
+    // END ADD DELETE BUTTON
 
 
 	//ADD CLASS DELETE (DISPLAY: NONE)
 	function deleteListItem(){
 		li.classList.add("delete")
-	}
-    //END ADD CLASS DELETE
-    
-    // function editListItem(){
-    //     li.classList.
-    // }
-}
+    }
+ 
 
 
 function addListAfterClick(){
@@ -55,7 +51,6 @@ function addListAfterClick(){
 	}
 }
 
-// event:any ??
 function addListAfterKeypress(event:any) {
 	if (inputLength() > 0 && event.which ===13) { //this now looks to see if you hit "enter"/"return"
 		//the 13 is the enter key's keycode, this could also be display by event.keyCode === 13
@@ -68,3 +63,43 @@ enterButton!.addEventListener("click",addListAfterClick);
 
 input!.addEventListener("keypress", addListAfterKeypress);
 
+
+
+// function acceptCookie() {
+//     document.getElementById("cookie-popup")!.style.display='none';
+//     window.open('https://javascript.info');
+// }
+// function denyCookie () {
+//     window.location="https://dsgvo-gesetz.de";
+// }
+
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn!.onclick = function() {
+  modal!.style.display = "block";
+}
+
+
+// When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal!.style.display = "none";
+// }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event:any) {
+  if (event.target == modal) {
+    modal!.style.display = "none";
+  }
+}
+}
