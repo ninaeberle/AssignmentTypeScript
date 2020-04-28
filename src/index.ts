@@ -2,8 +2,9 @@ const enterButton = document.getElementById("enter");
 const input = document.querySelector<HTMLInputElement>("#userInput")
 const ul = document.querySelector("ul");
 const item = document.getElementsByTagName("li");
-const allow = document.querySelector(".button1");
-const deny = document.querySelector(".button2");
+const fadeAway = document.getElementById('myModal')!;
+const noThanks = document.getElementById('button2')!;
+const toStore = document.getElementById('button1')!;
 
 
 // TODO LIST
@@ -79,16 +80,30 @@ input!.addEventListener("keypress", addListAfterKeypress);
 // }
 
 
+function closePopup(): void {
+	fadeAway.style.display = 'none';
+}
+
+noThanks.addEventListener('click', closePopup)
+
+
+function storeForwarding():void {
+	window.location.href = ('http://www.apple.com');
+}
+
+toStore.addEventListener('click', storeForwarding)
+
+
 
 // POPUP
 // Get the modal
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+const btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn!.onclick = function() {
