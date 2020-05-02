@@ -5,6 +5,10 @@ const item = document.getElementsByTagName("li");
 const fadeAway = document.getElementById('myModal')!;
 const noThanks = document.getElementById('button2')!;
 const toStore = document.getElementById('button1')!;
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn");
+
+
 
 
 // TODO LIST
@@ -18,31 +22,26 @@ function listLength(){
 
 // By the function createListElement, new elemts will be createt in the List
 function createListElement() {
-	const li = document.createElement("li"); // creates an element "li"
-	li.appendChild(document.createTextNode(input!.value)); //makes text from input field the li text
-	ul!.appendChild(li); //adds li to ul
-	input!.value = ""; //Reset text input field
+	const li = document.createElement("li"); 
+	li.appendChild(document.createTextNode(input!.value)); 
+	ul!.appendChild(li); 
+	input!.value = ""; 
 
 
-	//START STRIKETHROUGH
-	// because it's in the function, it only adds it for new items
+	// marks elements as 'done'
 	function crossOut() {
 		li.classList.toggle("done");
 	}
 
 	li.addEventListener("click",crossOut);
-	//END STRIKETHROUGH
 
-
-	// START ADD DELETE BUTTON
+// button apears to delete items
 	const dBtn = document.createElement("button");
 	dBtn.appendChild(document.createTextNode("X"));
 	li.appendChild(dBtn);
     dBtn.addEventListener("click", deleteListItem);
-    // END ADD DELETE BUTTON
 
 
-	//ADD CLASS DELETE (DISPLAY: NONE)
 	function deleteListItem(){
 		li.classList.add("delete")
     }
@@ -57,8 +56,7 @@ function addListAfterClick(){
 }
 
 function addListAfterKeypress(event:any) {
-	if (inputLength() > 0 && event.which ===13) { //this now looks to see if you hit "enter"/"return"
-		//the 13 is the enter key's keycode, this could also be display by event.keyCode === 13
+	if (inputLength() > 0 && event.which ===13) { 
 		createListElement();
 	} 
 }
@@ -71,22 +69,15 @@ input!.addEventListener("keypress", addListAfterKeypress);
 
 
 
-// function acceptCookie() {
-//     document.getElementById("cookie-popup")!.style.display='none';
-//     window.open('https://javascript.info');
-// }
-// function denyCookie () {
-//     window.location="https://dsgvo-gesetz.de";
-// }
-
-
+// POPUP
+// funktion to close the popup by the button 'noThanks'
 function closePopup(): void {
 	fadeAway.style.display = 'none';
 }
 
 noThanks.addEventListener('click', closePopup)
 
-
+// by clicking the 'toStore' button the page leads to apple.com
 function storeForwarding():void {
 	window.location.href = ('http://www.apple.com');
 }
@@ -95,27 +86,11 @@ toStore.addEventListener('click', storeForwarding)
 
 
 
-// POPUP
-// Get the modal
-const modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-const btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
+// When the user clicks the button, the modal opens
 btn!.onclick = function() {
   modal!.style.display = "block";
 }
-
-
-// When the user clicks on <span> (x), close the modal
-// span.onclick = function(event:any) {
-//   modal!.style.display = "none";
-// }
-
 
 // When the user clicks anywhere outside of the modal, it closes
 window.onclick = function(event:any) {
